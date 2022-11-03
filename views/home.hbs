@@ -1,0 +1,409 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='stylesheet' href='/assets/lib/Bootstrap/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/assets/css/style.css' />
+    <title>Periodic Table</title>
+  </head>
+  <body>
+    <header>
+      <nav class='navbar navbar-dark bg-dark'>
+        <h2 class='text-white ms-5 mb-0 mt-0'>Periodic Table</h2>
+      </nav>
+    </header>
+    <main>
+      <div class='container'>
+        <section class='row align-items-sm-start mt-2 mb-0'>
+          <article class='col alkaline'>
+            <h4 class='fs-sm'>Alkaline</h4>
+          </article>
+          <article class='col alkalineEarth'>
+            <h4 class='fs-sm'>Alkaline Earth</h4>
+          </article>
+          <article class='col transitionMetals'>
+            <h4 class='fs-sm'>Transition Metals</h4>
+          </article>
+          <article class='col otherMetals'>
+            <h4 class='fs-sm'>Other Metals</h4>
+          </article>
+          <article class='col metalloid'>
+            <h4 class='fs-sm'>Metalloid</h4>
+          </article>
+          <article class='col nonMetals'>
+            <h4 class='fs-sm'>Non Metals</h4>
+          </article>
+          <article class='col halogen'>
+            <h4 class='fs-sm'>Halogen</h4>
+          </article>
+          <article class='col nobleGas'>
+            <h4 class='fs-sm'>Noble Gas</h4>
+          </article>
+          <article class='col lanthanide'>
+            <h4 class='fs-sm'>Lanthanide</h4>
+          </article>
+          <article class='col actinide'>
+            <h4 class='fs-sm'>Actinide</h4>
+          </article>
+        </section>
+        <section class='mt-0 mb-3'>
+          <div class='my-container'>
+            <!-- Row1 -->
+            {{#each (ValidateRow1 elements.row1)}}
+              {{#if (IsEqual this.group 'deleted')}}
+                <div
+                  class='elements border border-white border-4 fw-bold fs-sm deleted'
+                ><span>x</span></div>
+              {{else}}
+                {{#if (IsEqual this.group 'noMetals')}}
+                  <div
+                    class='elements border border-white border-4 fw-bold fs-sm nonMetals'
+                  ><span>{{this.symbol}}</span></div>
+                {{else}}
+                  {{#if (IsEqual this.group 'nobleGas')}}
+                    <div
+                      class='elements border border-white border-4 fw-bold fs-sm nobleGas'
+                    ><span>{{this.symbol}}</span></div>
+                  {{/if}}
+                {{/if}}
+              {{/if}}
+            {{/each}}
+            <!-- Row2 -->
+            {{#each (ValidateRow2 elements.row2)}}
+              {{#if (IsEqual this.group 'deleted')}}
+                <div
+                  class='elements border border-white border-4 fw-bold fs-sm deleted'
+                ><span>x</span></div>
+              {{else}}
+                {{#if (IsEqual this.group 'alkaline')}}
+                  <div
+                    class='elements border border-white border-4 fw-bold fs-sm alkaline'
+                  ><span>{{this.symbol}}</span></div>
+                {{else}}
+                  {{#if (IsEqual this.group 'alkalineEarth')}}
+                    <div
+                      class='elements border border-white border-4 fw-bold fs-sm alkalineEarth'
+                    ><span>{{this.symbol}}</span></div>
+                  {{else}}
+                    {{#if (IsEqual this.group 'metalloid')}}
+                      <div
+                        class='elements border border-white border-4 fw-bold fs-sm metalloid'
+                      ><span>{{this.symbol}}</span></div>
+                    {{else}}
+                      {{#if (IsEqual this.group 'noMetals')}}
+                        <div
+                          class='elements border border-white border-4 fw-bold fs-sm nonMetals'
+                        ><span>{{this.symbol}}</span></div>
+                      {{else}}
+                        {{#if (IsEqual this.group 'halogen')}}
+                          <div
+                            class='elements border border-white border-4 fw-bold fs-sm halogen'
+                          ><span>{{this.symbol}}</span></div>
+                        {{else}}
+                          <div
+                            class='elements border border-white border-4 fw-bold fs-sm nobleGas'
+                          ><span>{{this.symbol}}</span></div>
+                        {{/if}}
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+                {{/if}}
+              {{/if}}
+            {{/each}}
+            <!--Row 3-->
+            {{#each (ValidateRow3 elements.row3)}}
+              {{#if (IsEqual this.group 'deleted')}}
+                <div
+                  class='elements border border-white border-4 fw-bold fs-sm deleted'
+                ><span>x</span></div>
+              {{else}}
+                {{#if (IsEqual this.group 'alkaline')}}
+                  <div
+                    class='elements border border-white border-4 fw-bold fs-sm alkaline'
+                  ><span>{{this.symbol}}</span></div>
+                {{else}}
+                  {{#if (IsEqual this.group 'alkalineEarth')}}
+                    <div
+                      class='elements border border-white border-4 fw-bold fs-sm alkalineEarth'
+                    ><span>{{this.symbol}}</span></div>
+                  {{else}}
+                    {{#if (IsEqual this.group 'metalloid')}}
+                      <div
+                        class='elements border border-white border-4 fw-bold fs-sm metalloid'
+                      ><span>{{this.symbol}}</span></div>
+                    {{else}}
+                      {{#if (IsEqual this.group 'noMetals')}}
+                        <div
+                          class='elements border border-white border-4 fw-bold fs-sm nonMetals'
+                        ><span>{{this.symbol}}</span></div>
+                      {{else}}
+                        {{#if (IsEqual this.group 'halogen')}}
+                          <div
+                            class='elements border border-white border-4 fw-bold fs-sm halogen'
+                          ><span>{{this.symbol}}</span></div>
+                        {{else}}
+                          {{#if (IsEqual this.group 'nobleGas')}}
+                            <div
+                              class='elements border border-white border-4 fw-bold fs-sm nobleGas'
+                            ><span>{{this.symbol}}</span></div>
+                          {{else}}
+                            <div
+                              class='elements border border-white border-4 fw-bold fs-sm lanthanide bg-opacity-50'
+                            ><span>{{this.symbol}}</span></div>
+                          {{/if}}
+                        {{/if}}
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+                {{/if}}
+              {{/if}}
+            {{/each}}
+            <!--Row4-->
+            {{#each (ValidateRow4 elements.row4)}}
+              {{#if (IsEqual this.group 'deleted')}}
+                <div
+                  class='elements border border-white border-4 fw-bold fs-sm deleted'
+                ><span>x</span></div>
+              {{else}}
+                {{#if (IsEqual this.group 'alkaline')}}
+                  <div
+                    class='elements border border-white border-4 fw-bold fs-sm alkaline'
+                  ><span>{{this.symbol}}</span></div>
+                {{else}}
+                  {{#if (IsEqual this.group 'alkalineEarth')}}
+                    <div
+                      class='elements border border-white border-4 fw-bold fs-sm alkalineEarth'
+                    ><span>{{this.symbol}}</span></div>
+                  {{else}}
+                    {{#if (IsEqual this.group 'metalloid')}}
+                      <div
+                        class='elements border border-white border-4 fw-bold fs-sm metalloid'
+                      ><span>{{this.symbol}}</span></div>
+                    {{else}}
+                      {{#if (IsEqual this.group 'noMetals')}}
+                        <div
+                          class='elements border border-white border-4 fw-bold fs-sm nonMetals'
+                        ><span>{{this.symbol}}</span></div>
+                      {{else}}
+                        {{#if (IsEqual this.group 'halogen')}}
+                          <div
+                            class='elements border border-white border-4 fw-bold fs-sm halogen'
+                          ><span>{{this.symbol}}</span></div>
+                        {{else}}
+                          {{#if (IsEqual this.group 'nobleGas')}}
+                            <div
+                              class='elements border border-white border-4 fw-bold fs-sm nobleGas'
+                            ><span>{{this.symbol}}</span></div>
+                          {{else}}
+                            {{#if (IsEqual this.group 'transitionMetal')}}
+                              <div
+                                class='elements border border-white border-4 fw-bold fs-sm transitionMetals'
+                              ><span>{{this.symbol}}</span></div>
+                            {{else}}
+                              <div
+                                class='elements border border-white border-4 fw-bold fs-sm otherMetals'
+                              ><span>{{this.symbol}}</span></div>
+                            {{/if}}
+                          {{/if}}
+                        {{/if}}
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+                {{/if}}
+              {{/if}}
+            {{/each}}
+            <!--Row5-->
+            {{#each (ValidateRow5 elements.row5)}}
+              {{#if (IsEqual this.group 'deleted')}}
+                <div
+                  class='elements border border-white border-4 fw-bold fs-sm deleted'
+                ><span>x</span></div>
+              {{else}}
+                {{#if (IsEqual this.group 'alkaline')}}
+                  <div
+                    class='elements border border-white border-4 fw-bold fs-sm alkaline'
+                  ><span>{{this.symbol}}</span></div>
+                {{else}}
+                  {{#if (IsEqual this.group 'alkalineEarth')}}
+                    <div
+                      class='elements border border-white border-4 fw-bold fs-sm alkalineEarth'
+                    ><span>{{this.symbol}}</span></div>
+                  {{else}}
+                    {{#if (IsEqual this.group 'metalloid')}}
+                      <div
+                        class='elements border border-white border-4 fw-bold fs-sm metalloid'
+                      ><span>{{this.symbol}}</span></div>
+                    {{else}}
+                      {{#if (IsEqual this.group 'halogen')}}
+                        <div
+                          class='elements border border-white border-4 fw-bold fs-sm halogen'
+                        ><span>{{this.symbol}}</span></div>
+                      {{else}}
+                        {{#if (IsEqual this.group 'nobleGas')}}
+                          <div
+                            class='elements border border-white border-4 fw-bold fs-sm nobleGas'
+                          ><span>{{this.symbol}}</span></div>
+                        {{else}}
+                          {{#if (IsEqual this.group 'transitionMetal')}}
+                            <div
+                              class='elements border border-white border-4 fw-bold fs-sm transitionMetals'
+                            ><span>{{this.symbol}}</span></div>
+                          {{else}}
+                            <div
+                              class='elements border border-white border-4 fw-bold fs-sm lanthanide bg-opacity-50'
+                            ><span>{{this.symbol}}</span></div>
+                          {{/if}}
+                        {{/if}}
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+                {{/if}}
+              {{/if}}
+            {{/each}}
+            <!--Row6-->
+            {{#each (ValidateRow6 elements.row6)}}
+              {{#if (IsEqual this.group 'deleted')}}
+                <div
+                  class='elements border border-white border-4 fw-bold fs-sm deleted'
+                ><span>x</span></div>
+              {{else}}
+                {{#if (IsEqual this.group 'alkaline')}}
+                  <div
+                    class='elements border border-white border-4 fw-bold fs-sm alkaline'
+                  ><span>{{this.symbol}}</span></div>
+                {{else}}
+                  {{#if (IsEqual this.group 'alkalineEarth')}}
+                    <div
+                      class='elements border border-white border-4 fw-bold fs-sm alkalineEarth'
+                    ><span>{{this.symbol}}</span></div>
+                  {{else}}
+                    {{#if (IsEqual this.group 'metalloid')}}
+                      <div
+                        class='elements border border-white border-4 fw-bold fs-sm metalloid'
+                      ><span>{{this.symbol}}</span></div>
+                    {{else}}
+                      {{#if (IsEqual this.group 'transitionMetal')}}
+                        <div
+                          class='elements border border-white border-4 fw-bold fs-sm transitionMetals'
+                        ><span>{{this.symbol}}</span></div>
+                      {{else}}
+                        {{#if (IsEqual this.group 'halogen')}}
+                          <div
+                            class='elements border border-white border-4 fw-bold fs-sm halogen'
+                          ><span>{{this.symbol}}</span></div>
+                        {{else}}
+                          {{#if (IsEqual this.group 'nobleGas')}}
+                            <div
+                              class='elements border border-white border-4 fw-bold fs-sm nobleGas'
+                            ><span>{{this.symbol}}</span></div>
+                          {{else}}
+                            {{#if (IsEqual this.group 'lanthanides')}}
+                              <div
+                                class='elements border border-white border-4 fw-bold fs-sm lanthanide'
+                              ><span>{{this.symbol}}</span></div>
+                            {{else}}
+                              <div
+                                class='elements border border-white border-4 fw-bold fs-sm lanthanide bg-opacity-50'
+                              ><span>{{this.symbol}}</span></div>
+                            {{/if}}
+                          {{/if}}
+                        {{/if}}
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+                {{/if}}
+              {{/if}}
+            {{/each}}
+            <!--Row 7-->
+            {{#each (ValidateRow7 elements.row7)}}
+              {{#if (IsEqual this.group 'deleted')}}
+                <div
+                  class='elements border border-white border-4 fw-bold fs-sm deleted'
+                ><span>x</span></div>
+              {{else}}
+                {{#if (IsEqual this.group 'alkaline')}}
+                  <div
+                    class='elements border border-white border-4 fw-bold fs-sm alkaline'
+                  ><span>{{this.symbol}}</span></div>
+                {{else}}
+                  {{#if (IsEqual this.group 'alkalineEarth')}}
+                    <div
+                      class='elements border border-white border-4 fw-bold fs-sm alkalineEarth'
+                    ><span>{{this.symbol}}</span></div>
+                  {{else}}
+                    {{#if (IsEqual this.group 'metalloid')}}
+                      <div
+                        class='elements border border-white border-4 fw-bold fs-sm bg-danger metalloid'
+                      ><span>{{this.symbol}}</span></div>
+                    {{else}}
+                      {{#if (IsEqual this.group 'transitionMetal')}}
+                        <div
+                          class='elements border border-white border-4 fw-bold fs-sm transitionMetals'
+                        ><span>{{this.symbol}}</span></div>
+                      {{else}}
+                        {{#if (IsEqual this.group 'halogen')}}
+                          <div
+                            class='elements border border-white border-4 fw-bold fs-sm halogen'
+                          ><span>{{this.symbol}}</span></div>
+                        {{else}}
+                          {{#if (IsEqual this.group 'nobleGas')}}
+                            <div
+                              class='elements border border-white border-4 fw-bold fs-sm nobleGas'
+                            ><span>{{this.symbol}}</span></div>
+                          {{else}}
+                            {{#if (IsEqual this.group 'actinide')}}
+                              <div
+                                class='elements border border-white border-4 fw-bold fs-sm actinide'
+                              ><span>{{this.symbol}}</span></div>
+                            {{else}}
+                              <div
+                                class='elements border border-white border-4 fw-bold fs-sm lanthanide bg-opacity-50'
+                              ><span>{{this.symbol}}</span></div>
+                            {{/if}}
+                          {{/if}}
+                        {{/if}}
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+                {{/if}}
+              {{/if}}
+            {{/each}}
+          </div>
+
+          <div class='my-container-bottom'>
+
+            {{#each (ValidateRow8 elements.row8)}}
+              {{#if (IsEqual this.group 'deleted')}}
+                <div
+                  class='elements border border-white border-4 fw-bold fs-sm deleted'
+                ><span>x</span></div>
+              {{else}}
+                {{#if (IsEqual this.group 'lanthanides')}}
+                  <div
+                    class='elements border border-white border-4 fw-bold fs-sm lanthanide'
+                  ><span>{{this.symbol}}</span></div>
+                {{/if}}
+              {{/if}}
+            {{/each}}
+
+            {{#each (ValidateRow9 elements.row9)}}
+              {{#if (IsEqual this.group 'deleted')}}
+                <div
+                  class='elements border border-white border-4 fw-bold fs-sm deleted'
+                ><span>x</span></div>
+              {{else}}
+                {{#if (IsEqual this.group 'actinide')}}
+                  <div
+                    class='elements border border-white border-4 fw-bold fs-sm actinide'
+                  ><span>{{this.symbol}}</span></div>
+                {{/if}}
+              {{/if}}
+            {{/each}}
+          </div>
+        </section>
+      </div>
+    </main>
+
+  </body>
+</html>
